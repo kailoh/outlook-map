@@ -22,7 +22,7 @@
   }
 
   function codeAddress() {
-    var address = "10400 NE 2nd St, Bellevue, WA 98004";
+    var address = document.getElementById("address").value;
     geocoder.geocode( { 'address': address}, function(results, status) {
       if (status == google.maps.GeocoderStatus.OK) {
         map.setCenter(results[0].geometry.location);
@@ -40,5 +40,9 @@
   </head>
   <body>
 <div id="map-canvas"></div>
+<div>
+    <input id="address" type="textbox" value="Sydney, NSW">
+    <input type="button" value="Encode" onclick="codeAddress()">
+  </div>
   </body>
 </html>
